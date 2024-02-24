@@ -8,7 +8,6 @@
 
 <script>
 	function time() {
-		console.info('asdf');
 		const time = document.getElementById('time');
 		const now = new Date().toLocaleTimeString('de-DE', {
 			hour12: false,
@@ -16,6 +15,12 @@
 			minute: 'numeric',
 			second: 'numeric'});
 		time.innerText = now;
+	}
+
+	function invert() {
+		const body = document.getElementsByTagName('body')[0];
+		body.style.color = body.style.color == 'white' ? 'black' : 'white';
+		body.style.backgroundColor = body.style.backgroundColor == 'black' ? 'white' : 'black';
 	}
 
 	setInterval(time, 1000);
@@ -43,6 +48,6 @@ body {
 
 </head>
 <body>
-	<div id=time></time>
+	<div id=time onclick='invert();'></time>
 </body>
 </html>
