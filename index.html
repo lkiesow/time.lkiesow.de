@@ -15,10 +15,11 @@
 			minute: 'numeric',
 			second: 'numeric'});
 		time.innerText = now;
+		document.body.style.zoom = 1.0;
 	}
 
 	function invert() {
-		const body = document.getElementsByTagName('body')[0];
+		const body = document.body;
 		body.style.color = body.style.color == 'white' ? 'black' : 'white';
 		body.style.backgroundColor = body.style.backgroundColor == 'black' ? 'white' : 'black';
 	}
@@ -50,7 +51,7 @@ body {
 </style>
 
 </head>
-<body>
-	<div id=time onclick='invert();'></time>
+<body onload='time();'>
+	<div id=time onclick='invert();'>loading…</time>
 </body>
 </html>
